@@ -108,6 +108,45 @@
       fill: currentColor;
     }
 
+    /* DOWNLOAD DROPDOWN STYLING */
+    .download-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      border: 2px solid #fff;
+      padding: 8px;
+      gap: 8px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.8);
+      z-index: 1001;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dropdown-btn-img {
+      height: 32px;
+      width: auto;
+      display: block;
+      image-rendering: pixelated;
+      transition: filter 0.1s ease;
+      filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.5));
+    }
+
+    .dropdown-btn-img:hover {
+      filter: brightness(1.3) drop-shadow(0px 3px 3px rgba(0,0,0,0.7));
+      cursor: pointer;
+    }
+
+    .download-dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+
     .main-container {
       padding-top: 150px;
       text-align: center;
@@ -170,10 +209,18 @@
         Discord
       </a>
 
-      <!-- DOWNLOAD BUTTON -->
-      <a href="https://www.mediafire.com/file/6ndysgoz3f590xr/DELTARUNE_NO_MORE.7z/file" target="_blank">
+      <!-- DOWNLOAD BUTTON WITH PIXEL IMAGE DROPDOWN -->
+      <div class="download-dropdown">
         <img src="btn_download.png" alt="Download" class="nav-img-btn">
-      </a>
+        <div class="dropdown-menu">
+          <a href="https://www.mediafire.com/file/6ndysgoz3f590xr/DELTARUNE_NO_MORE.7z/file" target="_blank">
+            <img src="btn_PC.png" alt="PC Download" class="dropdown-btn-img">
+          </a>
+          <a href="https://drive.google.com/file/d/1byF1kYaKhooSZccsLnEdlirIU0ZusAXe/view" target="_blank">
+            <img src="btn_Mobile.png" alt="Mobile Download" class="dropdown-btn-img">
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
